@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: HomeWidget(),
     );
@@ -29,19 +29,19 @@ class _HomeWidgetState extends State<HomeWidget> {
     return Scaffold(
       appBar: AppBar(title: Text('Stateful Widget')),
       body: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
                 onPressed: () => setState(() => {counter++}),
-                child: Icon(Icons.add)),
+                child: Icon(Icons.arrow_upward)),
             Container(
               child: Text('$counter'),
-              margin: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+              margin: EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 30.0),
             ),
             ElevatedButton(
                 onPressed: () => setState(() => {counter--}),
-                child: Icon(Icons.remove)),
+                child: Icon(Icons.arrow_downward)),
           ],
         ),
       ),
