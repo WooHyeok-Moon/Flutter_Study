@@ -1,55 +1,27 @@
 import 'package:flutter/material.dart';
+import 'ScreenA.dart';
+import 'ScreenB.dart';
+import 'ScreenC.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeWidget(),
+      title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blue,
       ),
-    );
-  }
-}
-
-class HomeWidget extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Experimental Application'),
-      ),
-      body: SafeArea(
-        child: Container(
-          child: Column(
-            children:[
-              Expanded(child: Container(
-                alignment: Alignment.center,
-                color: Colors.red,
-                child: Text(
-                  '한 놈',
-                  style: TextStyle(fontSize: 100),
-                  ),
-                ),
-                flex: 3,
-              ),
-              Expanded(child: Container(
-                alignment: Alignment.center,
-                child: Text(
-                  '두 놈',
-                  style: TextStyle(fontSize: 100),
-                  ),
-                ),
-                flex: 1,
-              ),
-            ],
-          ),
-        ),
-      )
+      debugShowCheckedModeBanner: false,
+      initialRoute: 'ScreenA',
+      routes: {
+        'ScreenA': (context) => ScreenA(),
+        'ScreenB': (context) => ScreenB(),
+        'ScreenC': (context) => ScreenC(),
+      },
     );
   }
 }
